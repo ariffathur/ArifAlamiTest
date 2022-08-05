@@ -6,5 +6,16 @@ import SearchInput from './SearchInput';
 import ProductCard from './ProductCard';
 import Modal from './Modal';
 import TextPresable from './TextPressable';
+import Padder from './Padder';
 
-export { Container, Header, TextInput, Button, SearchInput, ProductCard, Modal, TextPresable };
+export {
+  Container,
+  Header,
+  TextInput,
+  Button,
+  SearchInput,
+  ProductCard,
+  Modal,
+  TextPresable,
+  Padder,
+};

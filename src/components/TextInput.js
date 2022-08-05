@@ -8,9 +8,10 @@ function TextInput({
   title,
   marginBottom,
   handleTextChange,
+  handleOnBlur,
   placeHolder = 'placeholder here',
   editable = true,
-  value = null,
+  value,
 }) {
   return (
     <View style={{ marginBottom: marginBottom ? 12 : 0 }}>
@@ -21,7 +22,8 @@ function TextInput({
         editable={editable}
         style={[styles.textInput]}
         placeholder={placeHolder}
-        onChangeText={(text) => handleTextChange(text)}
+        onChangeText={handleTextChange}
+        onBlur={handleOnBlur}
         value={value}
       />
     </View>
