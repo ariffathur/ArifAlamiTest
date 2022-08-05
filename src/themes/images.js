@@ -9,5 +9,7 @@ export default {
   /**
    * ILLUSTRATIONS
    */
-  illustration: {},
+  illustration: {
+    form: require('../../assets/ilustrations/form.jpg'),
+  },
 };

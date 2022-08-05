@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { Button, Container, Header, TextInput } from '../../components';
+import { Modalize } from 'react-native-modalize';
+import { Button, Container, Header, TextInput, Modal } from '../../components';
+import images from '../../themes/images';
 
 function AddSeller() {
   const navigation = useNavigation();
+  const modalizeRef = useRef();
+
+  useEffect(() => {
+    onOpen();
+  }, []);
+
+  const onOpen = () => {
+    modalizeRef.current?.open();
+  };
+
   return (
     <Container blue withFlex>
       <Header>Menjadi Seller</Header>
@@ -25,6 +37,13 @@ function AddSeller() {
           Simpan
         </Button>
       </Container>
+      <Modalize ref={modalizeRef} adjustToContentHeight>
+        <Modal
+          ilustration={images.illustration.form}
+          title="Sebelum Mulai!"
+          desc="Isi dulu data penjual ya, habis itu lanjut isi data produknya :D"
+        />
+      </Modalize>
     </Container>
   );
 }

@@ -21,10 +21,14 @@ function ProductCard() {
           justifyContent: 'space-between',
         }}
       >
-        <Text style={{ fontFamily: fontFamily.nunitoRegular, fontSize: 16 }}>Alpukat (Kg)</Text>
-        <Text style={{ fontFamily: fontFamily.nunitoBold, fontSize: 16 }}>Rp. 10.000</Text>
+        <Text style={{ fontFamily: fontFamily.nunitoRegular, fontSize: 16, color: Colors.black }}>
+          Alpukat (Kg)
+        </Text>
+        <Text style={{ fontFamily: fontFamily.nunitoBold, fontSize: 16, color: Colors.black }}>
+          Rp. 10.000
+        </Text>
       </View>
-      <Text style={{ fontFamily: fontFamily.nunitoRegular }}>cuk</Text>
+      <Text style={{ fontFamily: fontFamily.nunitoRegular, color: Colors.black }}>cuk</Text>
     </View>
   );
 }

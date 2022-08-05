@@ -8,7 +8,7 @@ function Container({ withRadius, blue, children, withFlex }) {
       style={[
         styles.container,
         {
-          backgroundColor: blue ? Colors.blue : Colors.white,
+          backgroundColor: blue ? Colors.grey200 : Colors.white,
           borderRadius: withRadius || 0,
           ...(withFlex && { flex: 1 }),
         },

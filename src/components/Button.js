@@ -11,7 +11,7 @@ function Button({ bottom, children, handleOnpress, isDisabled = false }) {
         styles.buttonTouchable,
         {
           ...(bottom && { position: 'absolute', bottom: 24 }),
-          backgroundColor: isDisabled ? Colors.grey : Colors.green,
+          backgroundColor: isDisabled ? Colors.grey : Colors.success,
         },
       ]}
       onPress={handleOnpress}

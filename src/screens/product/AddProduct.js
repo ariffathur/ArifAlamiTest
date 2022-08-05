@@ -2,7 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import { Button, Container, Header, TextInput } from '../../components';
+import { Button, Container, Header, TextInput, TextPresable } from '../../components';
 
 function AddProduct() {
   const navigation = useNavigation();
@@ -50,6 +50,11 @@ function AddProduct() {
           </Button>
         </Container>
       </KeyboardAwareScrollView>
+      <View style={{ alignItems: 'center' }}>
+        <TextPresable handleOnPress={() => navigation.navigate('ProductListScreen')}>
+          Lihat List Product
+        </TextPresable>
+      </View>
     </Container>
   );
 }
