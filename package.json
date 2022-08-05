@@ -12,6 +12,7 @@
   "dependencies": {
     "@react-navigation/native": "^6.0.11",
     "@react-navigation/stack": "^6.2.2",
+    "@reduxjs/toolkit": "^1.8.3",
     "react": "18.0.0",
     "react-hook-form": "^7.34.0",
     "react-native": "0.69.3",
@@ -19,7 +20,9 @@
     "react-native-keyboard-aware-scroll-view": "^0.9.5",
     "react-native-modalize": "^2.0.13",
     "react-native-safe-area-context": "^4.3.1",
-    "react-native-screens": "^3.15.0"
+    "react-native-screens": "^3.15.0",
+    "react-native-toast-message": "^2.1.5",
+    "react-redux": "^8.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

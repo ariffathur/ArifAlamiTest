@@ -14,7 +14,8 @@
   },
   "plugins": ["react", "react-native"],
   "rules": {
-    // allow .js files to contain JSX code
+    "no-param-reassign": "off",
+    "import/prefer-default-export": "off",
     "react/prop-types": "off",
     "no-use-before-define": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]

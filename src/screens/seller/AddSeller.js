@@ -13,9 +13,8 @@ function AddSeller() {
 
   /** Effects */
   useEffect(() => {
-    navigation.navigate('AddProductScreen');
-    // openModalize();
-  }, [navigation]);
+    openModalize();
+  }, []);
 
   /** Form Config */
   const {
