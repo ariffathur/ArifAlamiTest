@@ -16,17 +16,17 @@ function AppNavigator() {
         <Stack.Screen
           name="AddSellerScreen"
           component={AddSeller}
-          options={{ title: 'Add Seller' }}
+          options={{ headerShown: false, title: 'Add Seller' }}
         />
         <Stack.Screen
           name="AddProductScreen"
           component={AddProduct}
-          options={{ title: 'Add Product' }}
+          options={{ headerShown: false, title: 'Add Product' }}
         />
         <Stack.Screen
           name="ProductListScreen"
           component={ProductList}
-          options={{ title: 'Product List' }}
+          options={{ headerShown: false, title: 'Product List' }}
         />
       </Stack.Navigator>
     </NavigationContainer>

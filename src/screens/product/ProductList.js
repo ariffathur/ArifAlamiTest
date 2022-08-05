@@ -1,11 +1,24 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import { Container, Header, SearchInput, ProductCard, Button } from '../../components';
 
 function ProductList() {
+  const navigation = useNavigation();
   return (
-    <View>
-      <Text>Product List</Text>
-    </View>
+    <Container blue withFlex>
+      <Header>List Produk Kamu</Header>
+
+      <KeyboardAwareScrollView>
+        <Container withRadius={12}>
+          <SearchInput handleTextChange={() => {}} placeHolder="Masukan kata kunci nama produk" />
+        </Container>
+        <ProductCard />
+      </KeyboardAwareScrollView>
+      <Button handleOnpress={() => navigation.navigate('AddProductScreen')} bottom>
+        Tambah
+      </Button>
+    </Container>
   );
 }
 

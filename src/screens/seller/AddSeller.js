@@ -1,11 +1,31 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { Button, Container, Header, TextInput } from '../../components';
 
 function AddSeller() {
+  const navigation = useNavigation();
   return (
-    <View>
-      <Text>Add Seller</Text>
-    </View>
+    <Container blue withFlex>
+      <Header>Menjadi Seller</Header>
+      <Container withRadius={12}>
+        <TextInput
+          title="Nama Toko"
+          handleTextChange={() => {}}
+          marginBottom
+          placeHolder="Masukan nama toko juragan disini"
+        />
+        <TextInput
+          title="Kota Toko"
+          handleTextChange={() => {}}
+          marginBottom
+          placeHolder="Masukan kota toko juragan disini"
+        />
+
+        <Button isDisabled={false} handleOnpress={() => navigation.navigate('AddProductScreen')}>
+          Simpan
+        </Button>
+      </Container>
+    </Container>
   );
 }
 
