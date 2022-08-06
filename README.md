@@ -1,5 +1,10 @@
 # Alami Takehome Test App
 
+| Android Demo  | iOS Demo |
+| ------------- | ------------- |
+|  https://user-images.githubusercontent.com/25089810/183257150-e0c385b7-983f-44dc-af1b-62f7fe610b79.mov  |  https://user-images.githubusercontent.com/25089810/183257178-6c6be624-8897-4532-945d-f087ae3ed816.mov |
+
+
 ## Prerequisite
 
 Make sure you have followed the [React Native CLI Quick Start](https://reactnative.dev/docs/environment-setup).
