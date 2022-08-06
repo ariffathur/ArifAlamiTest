@@ -1,30 +1,57 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { alamiService } from '../../services/alamiService';
 
-const initialState = {
-  value: 0,
-};
+export const addProduct = createAsyncThunk('product/add', async (payload) => {
+  const response = await alamiService.postProduct(payload);
+  return response.data;
+});
+
+export const fetchProductBySellerId = createAsyncThunk('product/fetch-by-id', async (sellerId) => {
+  const response = await alamiService.fetchProductBySellerId(sellerId);
+  return response.data;
+});
+
+export const fetchProductByKeyword = createAsyncThunk(
+  'product/fetch-by-keyword',
+  async (keyword) => {
+    const response = await alamiService.fetchProductByKeyword(keyword);
+    return response.data;
+  }
+);
 
 export const productSlice = createSlice({
-  name: 'counter',
-  initialState,
+  name: 'product',
+  initialState: { product: {}, products: [], loading: false },
   reducers: {
-    increment: (state) => {
-      // Redux Toolkit allows us to write "mutating" logic in reducers. It
-      // doesn't actually mutate the state because it uses the Immer library,
-      // which detects changes to a "draft state" and produces a brand new
-      // immutable state based off those changes
-      state.value += 1;
+    resetProduct(state) {
+      state.product = {};
+      state.loading = false;
     },
-    decrement: (state) => {
-      state.value -= 1;
-    },
-    incrementByAmount: (state, action) => {
-      state.value += action.payload;
-    },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(addProduct.pending, (state) => {
+      state.loading = true;
+    });
+    builder.addCase(addProduct.fulfilled, (state, action) => {
+      state.loading = false;
+      state.product = action.payload;
+    });
+    builder.addCase(fetchProductByKeyword.pending, (state) => {
+      state.loading = true;
+    });
+    builder.addCase(fetchProductByKeyword.fulfilled, (state, action) => {
+      state.loading = false;
+      state.products = action.payload.data;
+    });
+    builder.addCase(fetchProductBySellerId.pending, (state) => {
+      state.loading = true;
+    });
+    builder.addCase(fetchProductBySellerId.fulfilled, (state, action) => {
+      state.loading = false;
+      state.products = action.payload.data;
+    });
   },
 });
 
-// Action creators are generated for each case reducer function
-export const { increment, decrement, incrementByAmount } = productSlice.actions;
-
+export const { resetProduct } = productSlice.actions;
 export default productSlice.reducer;

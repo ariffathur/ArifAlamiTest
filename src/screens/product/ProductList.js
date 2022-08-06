@@ -8,7 +8,7 @@ function ProductList() {
   const navigation = useNavigation();
   return (
     <Container blue withFlex>
-      <Header>List Produk Kamu</Header>
+      <Header>List Produk</Header>
 
       <KeyboardAwareScrollView>
         <Container withRadius={12}>

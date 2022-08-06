@@ -8,12 +8,11 @@ export const addSeller = createAsyncThunk('seller/add', async (payload) => {
 
 export const sellerSlice = createSlice({
   name: 'seller',
-  initialState: { seller: {}, loading: false, error: null },
+  initialState: { seller: {}, loading: false },
   reducers: {
     resetSeller(state) {
       state.seller = {};
       state.loading = false;
-      state.error = null;
     },
   },
   extraReducers: (builder) => {
@@ -23,7 +22,6 @@ export const sellerSlice = createSlice({
     builder.addCase(addSeller.fulfilled, (state, action) => {
       state.loading = false;
       state.seller = action.payload;
-      state.error = '';
     });
   },
 });

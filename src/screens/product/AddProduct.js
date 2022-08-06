@@ -1,13 +1,40 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Text } from 'react-native';
+import { useSelector, useDispatch } from 'react-redux';
 import { useNavigation } from '@react-navigation/native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { useForm, Controller } from 'react-hook-form';
+import Toast from 'react-native-toast-message';
 import { Button, Container, Header, TextInput, TextPresable, Padder } from '../../components';
 import Colors from '../../themes/colors';
+import { addProduct } from './productSlice';
 
 function AddProduct() {
   const navigation = useNavigation();
+  const dispatch = useDispatch();
+  const sellerData = useSelector((state) => state.seller?.seller);
+  const productData = useSelector((state) => state.product?.product);
+
+  const [sellerId, setSellerId] = useState('');
+
+  useEffect(() => {
+    setSellerId(sellerData.data?.id);
+  }, [sellerData]);
+
+  /** Effects */
+  useEffect(() => {
+    if (productData?.code === 200) {
+      Toast.show({
+        type: 'success',
+        text1: 'Berhasil Menambah Product',
+      });
+    } else if (productData?.code >= 400 && productData?.code < 600) {
+      Toast.show({
+        type: 'error',
+        text1: productData?.message,
+      });
+    }
+  }, [productData]);
 
   /** Form Config */
   const {
@@ -16,42 +43,23 @@ function AddProduct() {
     formState: { errors },
   } = useForm({
     defaultValues: {
-      sellerId: '1',
       nama: '',
       satuan: '',
       hargaSatuan: '',
       deskripsi: '',
     },
   });
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    const payload = data;
+    payload.sellerId = sellerId;
+    dispatch(addProduct(payload));
+  };
   return (
     <Container blue withFlex>
       <Header>Daftarin Produk Yuk</Header>
 
       <KeyboardAwareScrollView>
         <Container withRadius={12}>
-          {/* Seller ID Field */}
-          <Controller
-            control={control}
-            rules={{
-              required: true,
-            }}
-            render={({ field: { onChange, onBlur, value } }) => (
-              <TextInput
-                editable={false}
-                title="ID Penjual"
-                handleTextChange={onChange}
-                handleOnBlur={onBlur}
-                value={value}
-              />
-            )}
-            name="sellerId"
-          />
-          {errors.sellerId && (
-            <Text style={{ marginBottom: 6, color: Colors.warning }}>Wajib diisi gan!</Text>
-          )}
-          <Padder size={8} />
-
           {/* Nama Produk Field */}
           <Controller
             control={control}
@@ -64,6 +72,7 @@ function AddProduct() {
                 handleTextChange={onChange}
                 handleOnBlur={onBlur}
                 value={value}
+                placeHolder="Masukan nama produk"
               />
             )}
             name="nama"
