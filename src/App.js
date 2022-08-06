@@ -1,3 +1,8 @@
+/* eslint-disable import/first */
+if (__DEV__) {
+  import('./reactotron.config').then(() => console.log('Reactotron Configured'));
+}
+
 import React from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
 import Toast from 'react-native-toast-message';

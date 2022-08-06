@@ -7,7 +7,7 @@ export const addProduct = createAsyncThunk('product/add', async (payload) => {
 });
 
 export const fetchProductBySellerId = createAsyncThunk('product/fetch-by-id', async (sellerId) => {
-  const response = await alamiService.fetchProductBySellerId(sellerId);
+  const response = await alamiService.fetchProduct(sellerId);
   return response.data;
 });
 
@@ -24,7 +24,7 @@ export const productSlice = createSlice({
   initialState: { product: {}, products: [], loading: false },
   reducers: {
     resetProduct(state) {
-      state.product = {};
+      state.products = [];
       state.loading = false;
     },
   },

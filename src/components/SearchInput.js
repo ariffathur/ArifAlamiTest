@@ -9,8 +9,9 @@ function SearchInput({ marginBottom, handleTextChange, placeHolder = 'placeholde
     <View
       style={{
         borderWidth: 1,
-        borderRadius: 6,
+        borderRadius: 12,
         borderColor: Colors.grey,
+        backgroundColor: Colors.white,
         paddingVertical: 0,
         paddingHorizontal: 12,
         flexDirection: 'row',

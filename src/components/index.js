@@ -7,6 +7,7 @@ import ProductCard from './ProductCard';
 import Modal from './Modal';
 import TextPresable from './TextPressable';
 import Padder from './Padder';
+import EmptyState from './EmptyState';
 
 export {
   Container,
@@ -18,4 +19,5 @@ export {
   Modal,
   TextPresable,
   Padder,
+  EmptyState,
 };

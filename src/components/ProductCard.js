@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 import Colors from '../themes/colors';
 import fontFamily from '../themes/typography';
 
-function ProductCard() {
+function ProductCard({ item }) {
   return (
     <View
       style={{
@@ -22,13 +22,15 @@ function ProductCard() {
         }}
       >
         <Text style={{ fontFamily: fontFamily.nunitoRegular, fontSize: 16, color: Colors.black }}>
-          Alpukat (Kg)
+          {`${item?.nama} (${item?.satuan})`}
         </Text>
         <Text style={{ fontFamily: fontFamily.nunitoBold, fontSize: 16, color: Colors.black }}>
-          Rp. 10.000
+          {item?.hargaSatuan}
         </Text>
       </View>
-      <Text style={{ fontFamily: fontFamily.nunitoRegular, color: Colors.black }}>cuk</Text>
+      <Text style={{ fontFamily: fontFamily.nunitoRegular, color: Colors.black }}>
+        {item?.deskripsi}
+      </Text>
     </View>
   );
 }

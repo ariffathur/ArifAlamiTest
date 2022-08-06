@@ -1,11 +1,19 @@
 import React, { useRef, useEffect } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { useSelector, useDispatch } from 'react-redux';
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
 import { Modalize } from 'react-native-modalize';
 import { useForm, Controller } from 'react-hook-form';
 import Toast from 'react-native-toast-message';
-import { Button, Container, Header, TextInput, Modal, Padder } from '../../components';
+import {
+  Button,
+  Container,
+  Header,
+  TextInput,
+  Modal,
+  Padder,
+  TextPresable,
+} from '../../components';
 import images from '../../themes/images';
 import Colors from '../../themes/colors';
 import { addSeller } from './sellerSlice';
@@ -110,6 +118,11 @@ function AddSeller() {
           desc="Isi dulu data penjual ya, habis itu lanjut isi data produknya :D"
         />
       </Modalize>
+      <View style={{ alignSelf: 'center', position: 'absolute', bottom: 24 }}>
+        <TextPresable size={18} handleOnPress={() => navigation.navigate('SearchProductScreen')}>
+          Cari produk tersedia
+        </TextPresable>
+      </View>
     </Container>
   );
 }
