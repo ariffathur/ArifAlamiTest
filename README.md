@@ -58,3 +58,10 @@ App/
     │   └── typography.js
     └── App.js (app entry point)
 ```
+
+## Things to improve if I have more time
+
+- using TS
+- improve UI/UX
+- better RTK config/setup
+- write unit test
