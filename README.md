@@ -2,7 +2,7 @@
 
 | Android Demo  | iOS Demo |
 | ------------- | ------------- |
-|  https://user-images.githubusercontent.com/25089810/183257150-e0c385b7-983f-44dc-af1b-62f7fe610b79.mov  |  https://user-images.githubusercontent.com/25089810/183257178-6c6be624-8897-4532-945d-f087ae3ed816.mov |
+|  https://drive.google.com/file/d/17EDg153NKmxn0NFBJ0p7yfPC9NARx-cU/view?usp=sharing  |  https://drive.google.com/file/d/1kg6CTlVV-l1pdup6U-8RdpK5pn9Jizh5/view?usp=sharing |
 
 
 ## Prerequisite
