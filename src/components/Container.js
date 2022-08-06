@@ -1,10 +1,10 @@
 import React from 'react';
-import { SafeAreaView, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import Colors from '../themes/colors';
 
 function Container({ withRadius, blue, children, withFlex }) {
   return (
-    <SafeAreaView
+    <View
       style={[
         styles.container,
         {
@@ -15,7 +15,7 @@ function Container({ withRadius, blue, children, withFlex }) {
       ]}
     >
       {children}
-    </SafeAreaView>
+    </View>
   );
 }
 
