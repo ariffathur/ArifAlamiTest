@@ -112,6 +112,7 @@ function AddProduct() {
             }}
             render={({ field: { onChange, onBlur, value } }) => (
               <TextInput
+                isNumber
                 title="Harga Produk"
                 handleTextChange={onChange}
                 handleOnBlur={onBlur}

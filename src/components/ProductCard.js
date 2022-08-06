@@ -25,7 +25,7 @@ function ProductCard({ item }) {
           {`${item?.nama} (${item?.satuan})`}
         </Text>
         <Text style={{ fontFamily: fontFamily.nunitoBold, fontSize: 16, color: Colors.black }}>
-          {item?.hargaSatuan}
+          {`Rp${item?.hargaSatuan}`}
         </Text>
       </View>
       <Text style={{ fontFamily: fontFamily.nunitoRegular, color: Colors.black }}>

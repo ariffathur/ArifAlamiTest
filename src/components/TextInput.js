@@ -5,6 +5,7 @@ import fontFamily from '../themes/typography';
 
 function TextInput({
   isTextArea,
+  isNumber,
   title,
   marginBottom,
   handleTextChange,
@@ -17,6 +18,7 @@ function TextInput({
     <View style={{ marginBottom: marginBottom ? 12 : 0 }}>
       <Text style={styles.title}>{title}</Text>
       <ReactNativeTextInput
+        keyboardType={isNumber ? 'number-pad' : 'default'}
         multiline={isTextArea}
         numberOfLines={isTextArea ? 4 : 1}
         editable={editable}
