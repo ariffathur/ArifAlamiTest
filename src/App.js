@@ -1,5 +1,6 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
+import Toast from 'react-native-toast-message';
 import { Provider } from 'react-redux';
 import { store } from './store';
 import AppNavigator from './navigation/AppNavigator';
@@ -9,6 +10,7 @@ function App() {
     <Provider store={store}>
       <SafeAreaView style={styles.container}>
         <AppNavigator />
+        <Toast />
       </SafeAreaView>
     </Provider>
   );

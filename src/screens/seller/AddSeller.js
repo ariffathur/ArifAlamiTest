@@ -1,20 +1,40 @@
 import React, { useRef, useEffect } from 'react';
 import { useNavigation } from '@react-navigation/native';
+import { useSelector, useDispatch } from 'react-redux';
 import { Text } from 'react-native';
 import { Modalize } from 'react-native-modalize';
 import { useForm, Controller } from 'react-hook-form';
+import Toast from 'react-native-toast-message';
 import { Button, Container, Header, TextInput, Modal, Padder } from '../../components';
 import images from '../../themes/images';
 import Colors from '../../themes/colors';
+import { addSeller } from './sellerSlice';
 
 function AddSeller() {
   const navigation = useNavigation();
   const modalizeRef = useRef();
+  const dispatch = useDispatch();
+  const sellerData = useSelector((state) => state.seller.seller);
 
   /** Effects */
   useEffect(() => {
     openModalize();
   }, []);
+
+  useEffect(() => {
+    if (sellerData?.code === 200) {
+      Toast.show({
+        type: 'success',
+        text1: 'Berhasil Menambah Penjual',
+      });
+      navigation.navigate('AddProductScreen');
+    } else if (sellerData?.code >= 400 && sellerData?.code < 600) {
+      Toast.show({
+        type: 'error',
+        text1: sellerData?.message,
+      });
+    }
+  }, [sellerData, navigation]);
 
   /** Form Config */
   const {
@@ -27,7 +47,7 @@ function AddSeller() {
       kota: '',
     },
   });
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => dispatch(addSeller(data));
 
   const openModalize = () => {
     modalizeRef.current?.open();
