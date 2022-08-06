@@ -1,6 +1,6 @@
 /* eslint-disable import/first */
 if (__DEV__) {
-  import('./reactotron.config').then(() => console.log('Reactotron Configured'));
+  import('./reactotron.config').then(() => {});
 }
 
 import React from 'react';
