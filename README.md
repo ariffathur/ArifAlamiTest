@@ -40,17 +40,21 @@ for ios
 ## App Directories
 
 ```
-📦 App
- ┣ 📂 Assets (static assets)
- ┃ ┗ 📂 Images (image assets)
- ┣ 📂 Components (presentational components)
- ┣ 📂 Config (configuration of the application)
- ┣ 📂 Containers (container components, i.e. the application's screens)
- ┣ 📂 Models (rematch models)
- ┃ ┣ 📂 Persisted (rematch persisted models)
- ┣ 📂 Navigators (react navigation navigators)
- ┣ 📂 Services (application services, e.g. API clients)\
- ┣ 📂 Themes (base styles for the application)
- ┣ 📂 Transforms (common functions to transform data)
- ┗ 📜 App.js (app entry point)
+App/
+├── android
+├── ios
+├── assets/
+│   ├── fonts
+│   ├── icons
+│   └── ilustrations
+└── src/
+    ├── components (presentational components)
+    ├── navigation (react navigation navigators)
+    ├── screens (application screens)
+    ├── services (application services, e.g. API clients)
+    ├── themes/
+    │   ├── colors.js
+    │   ├── images.js
+    │   └── typography.js
+    └── App.js (app entry point)
 ```
